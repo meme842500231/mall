@@ -7,9 +7,9 @@
 import axios from 'axios'
 // import jsonp from 'jsonp'
 export default {
-  // comments:{
-  //   axios
-  // },
+ components:{
+
+ },
   data(){
     return{
       age:30
