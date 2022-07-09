@@ -4,20 +4,20 @@
   </div>
 </template>
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 // import jsonp from 'jsonp'
 export default {
-  // comments:{
-  //   axios
-  // },
+  components:{
+
+  },
   data(){
     return{
       age:30
     }
   },
   mounted(){
-    let url ="https://www.imooc.com/activity/servicetime"
-    axios.get(url).then(()=>{
+    let url ="/api/u/card"
+    this.$axios.get(url).then(()=>{
     })
     // jsonp(url,()=>{
 
