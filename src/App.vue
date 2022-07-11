@@ -1,28 +1,23 @@
 <template lang="">
   <div>
-    
+    <router-view></router-view>
   </div>
 </template>
 <script>
 // import axios from 'axios'
 // import jsonp from 'jsonp'
 export default {
-  components:{
+  components: {
 
   },
-  data(){
-    return{
-      age:30
+  data() {
+    return {
+
     }
-  },
-  mounted(){
-    let url ="/api/u/card"
-    this.$axios.get(url).then(()=>{
-    })
-    // jsonp(url,()=>{
+},
+mounted(){
 
-    // })
-  }
+}
 }
 </script>
 <style lang="">
