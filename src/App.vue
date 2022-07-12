@@ -4,20 +4,22 @@
   </div>
 </template>
 <script>
-// import axios from 'axios'
-// import jsonp from 'jsonp'
+// import storage from './storage'
 export default {
   components: {
 
   },
   data() {
     return {
-
+      res:{}
     }
-},
-mounted(){
+  },
+  mounted() {
+    // storage.setItem('user',{a:1})
+    // storage.setItem('abc', { a: 1 }, 'user')
+    this.axios.get('/user/login').then((res)=>{this.res=res})
 
-}
+  }
 }
 </script>
 <style lang="">
