@@ -1,13 +1,10 @@
-<template lang="">
-    <div>
-    alipay   
-    </div>
+<template>
+  <div>
+    alipay
+  </div>
 </template>
 <script>
-export default {
+  export default{
     name:'alipay'
-}
+  }
 </script>
-<style lang="">
-    
-</style>

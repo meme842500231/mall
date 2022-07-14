@@ -1,13 +1,10 @@
-<template lang="">
-    <div>
-      product  
-    </div>
+<template>
+  <div>
+    product
+  </div>
 </template>
 <script>
-export default {
+  export default{
     name:'product'
-}
+  }
 </script>
-<style lang="">
-    
-</style>

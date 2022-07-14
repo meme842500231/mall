@@ -1,13 +1,8 @@
-<template lang="">
-    <div>
-       order-header 
-    </div>
+<template>
+  <div>order-header</div>
 </template>
 <script>
-export default {
+  export default{
     name:'order-header'
-}
+  }
 </script>
-<style lang="">
-    
-</style>

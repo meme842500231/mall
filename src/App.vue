@@ -1,27 +1,26 @@
-<template lang="">
-  <div>
+<template>
+  <div id="app">
     <router-view></router-view>
   </div>
 </template>
-<script>
-// import storage from './storage'
-export default {
-  components: {
 
+<script>
+export default {
+  name: 'app',
+  components: {
+    
   },
-  data() {
+  data(){
     return {
-      res:{}
+      
     }
   },
-  mounted() {
-    // storage.setItem('user',{a:1})
-    // storage.setItem('abc', { a: 1 }, 'user')
-    this.axios.get('/user/login').then((res)=>{this.res=res})
-
+  mounted(){
+    
   }
 }
 </script>
-<style lang="">
-  
+
+<style>
+@import './assets/scss/reset.scss'
 </style>

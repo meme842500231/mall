@@ -1,13 +1,10 @@
-<template lang="">
-    <div>
-    order-pay   
-    </div>
+<template>
+  <div>
+    orderPay
+  </div>
 </template>
 <script>
-export default {
+  export default{
     name:'order-pay'
-}
+  }
 </script>
-<style lang="">
-    
-</style>
