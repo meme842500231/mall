@@ -8,19 +8,38 @@
 export default {
   name: 'app',
   components: {
-    
+
   },
-  data(){
+  data() {
     return {
-      
+
     }
   },
-  mounted(){
-    
-  }
+  mounted() {
+    this.getCartCount()
+    this.getUser()
+  },
+  methods: {
+    getCartCount() {
+      this.axios.get('/carts/products/sum', {
+      }).then((res=0) => {
+        this.$store.dispatch('saveCartCount',res)
+      })
+
+    },
+    getUser() {
+      this.axios.get('/user', {}).then((res={}) => {
+        this.$store.dispatch('saveUsername', res.username)
+      })
+    }
+  },
 }
 </script>
 
-<style>
-@import './assets/scss/reset.scss'
+<style lang="scss">
+@import './assets/scss/reset.scss';
+@import './assets/scss/mixin.scss';
+@import './assets/scss/modal.scss';
+@import './assets/scss/config.scss';
+@import './assets/scss/button.scss';
 </style>
