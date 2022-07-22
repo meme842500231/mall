@@ -123,9 +123,8 @@ export default {
         productId:this.$route.params.id,
         selected: true
       }).then((res={})=>{
-        console.log(res)
         this.$store.dispatch('saveCartCount',res.cartTotalQuantity)
-        // this.$router.push('/cart')
+        this.$message.success('已添加至购物车')
       })
     }
   },

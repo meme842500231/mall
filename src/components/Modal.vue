@@ -5,30 +5,17 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <span>{{title}}</span>
-                        <!-- <a href="javascript:;" class="icon-close" @click="cancel"></a>
-                    </div>
-                    <div class="modal-body">
-                        <slot name="body">商品添加成功</slot>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="javascript:;" class="btn" v-if="btntype == 1" @click="submit">确定</a>
-                        <a href="javascript:;" class="btn btn-default" v-if="btntype == 2" @click="cancel">取消</a>
-                        <div class="btn-group" v-if="btntype == 3">
-                            <a href="javascript:;" class="btn" @click="submit">确定</a>
-                            <a href="javascript:;" class="btn btn-default" @click="cancel">取消</a>
-                        </div>
-                    </div> -->
                         <a href="javascript:;" class="icon-close" @click="$emit('cancel')"></a>
                     </div>
                     <div class="modal-body">
-                        <slot name="body">商品添加成功</slot>
+                        <slot name="body"></slot>
                     </div>
                     <div class="modal-footer">
                         <a href="javascript:;" class="btn" v-if="btntype == 1" @click="$emit('submit')">{{sureText}}</a>
                         <a href="javascript:;" class="btn btn-default" v-if="btntype == 2" @click="$emit('cancel')">{{cancelText}}</a>
                         <div class="btn-group" v-if="btntype == 3">
-                            <a href="javascript:;" class="btn" @click="$emit('submit')">{{cancelText}}</a>
-                            <a href="javascript:;" class="btn btn-default" @click="$emit('cancel')">{{cancelText}}</a>
+                            <a href="javascript:;" class="btn" @click="$emit('submit')">{{sureText}}</a>
+                            <a href="javascript:;" class="btn btn-default"   @click="$emit('cancel')">{{cancelText}}</a>
                         </div>
                     </div>
                 </div>

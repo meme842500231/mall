@@ -86,9 +86,8 @@
     <service-bar></service-bar>
     <modal title="提示" sureText="查看购物车" btntype="1" modaltype="middle" :showModal="showModal" @submit="submit"
       @cancel="cancel">
-      <template>
-        <slot name="body">
-        </slot>
+      <template v-slot:body>
+        <slot name="body">商品添加成功</slot>
       </template>
     </modal>
   </div>
@@ -98,6 +97,7 @@ import ServiceBar from './../components/ServiceBar'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 import Modal from '../components/Modal'
+
 export default {
   name: 'index',
   components: {
@@ -195,10 +195,16 @@ export default {
 
   },
   mounted() {
+    this.getCartCount()
     this.getProduct()
-    console.log(this.$route)
   },
   methods: {
+    getCartCount() {
+      this.axios.get('/carts/products/sum', {
+      }).then((res=0) => {
+        this.$store.dispatch('saveCartCount',res)
+      })
+    },
     getProduct() {
       this.axios.get('/products', {
         params: {

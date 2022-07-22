@@ -61,8 +61,7 @@ export default {
                 password
             }).then((res={}) => {
                 this.$cookie.set('userId', res.id, { expires: '1M' });
-                // this.$store.commit('saveUsername', res.username)
-
+                this.$store.commit('saveUsername', res.username)
                 this.$router.push('/index')
             })
         },

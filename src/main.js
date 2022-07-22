@@ -2,6 +2,8 @@ import Vue from 'vue'
 import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import { Message } from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 import App from './App.vue'
 import VueLazyload from 'vue-lazyload'
 import Vuecookie from 'vue-cookie'
@@ -32,15 +34,20 @@ axios.interceptors.response.use(function (response) {
     alert(res.msg);
     return Promise.reject(res);
   }
+}, (error) => {
+  let res = error.response
+  Message.error(res.data.message)
+  return Promise.reject(error)
 });
-
+// Vue.use(ElementUI);
+// Vue.use(Message);
 Vue.use(VueAxios, axios);
 Vue.use(Vuecookie);
 Vue.use(VueLazyload, {
   loading: '/imgs/loading-svg/loading-bars.svg'
 })
 Vue.config.productionTip = false
-
+Vue.prototype.$message = Message;
 new Vue({
   store,
   router,

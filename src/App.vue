@@ -16,22 +16,23 @@ export default {
     }
   },
   mounted() {
-    this.getCartCount()
-    this.getUser()
+    // if (this.$cookie.get('userId')) {
+    //   }
+      this.getCartCount()
+      this.getUser()
   },
   methods: {
-    getCartCount() {
-      this.axios.get('/carts/products/sum', {
-      }).then((res=0) => {
-        this.$store.dispatch('saveCartCount',res)
-      })
-
-    },
     getUser() {
-      this.axios.get('/user', {}).then((res={}) => {
+      this.axios.get('/user', {}).then((res = {}) => {
         this.$store.dispatch('saveUsername', res.username)
       })
-    }
+    },
+    getCartCount() {
+      this.axios.get('/carts/products/sum', {
+      }).then((res = 0) => {
+        this.$store.dispatch('saveCartCount', res)
+      })
+    },
   },
 }
 </script>
