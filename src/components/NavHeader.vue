@@ -149,7 +149,7 @@ export default {
     loginOut() {
       this.axios.post('/user/logout').then(() => {
         this.$message.success('退出成功')
-        this.$cookie.set('userId','',{expires: 'Session' })
+        this.$cookie.set('userId','',{expires: '1M' })
         this.$store.dispatch('saveUsername', '')
          this.$store.dispatch('saveCartCount', '0')
         })
@@ -250,7 +250,7 @@ export default {
             overflow: hidden;
             border-top: 1px solid #E5E5E5;
             box-shadow: 0px 7px 6px 0px rgba(0, 0, 0, 0.11);
-            z-index: 10;
+            z-index: 15;
             transition: all .5s;
             background-color: #ffffff;
 
@@ -262,6 +262,7 @@ export default {
               font-size: 12px;
               line-height: 12px;
               text-align: center;
+              
 
               a {
                 display: inline-block;

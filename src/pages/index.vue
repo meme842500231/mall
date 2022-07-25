@@ -4,7 +4,7 @@
       <div class="swiper-box">
         <div class="wrap-nav">
           <ul class="wrap-menu">
-            <li class="warp-item">
+            <li class="warp-item"> 
               <a href="##">手机 电话卡</a>
               <div class="children">
                 <ul v-for="(item, i) in menuList" :key="i">
@@ -76,7 +76,10 @@
                 <a :href="'/#/product/' + innerItem.id"><img v-lazy="innerItem.mainImage"></a>
                 <h3>{{ innerItem.name }}</h3>
                 <p>{{ innerItem.subtitle }}</p>
-                <h5 @click="addCart(innerItem.id)">{{ innerItem.price }}元</h5>
+                <div class="price-icon">
+                  <h5>{{ innerItem.price }}元</h5>
+                  <img src="../../public/imgs/icon-cart-checked.png" @click="addCart(innerItem.id)" class="icon-cart">
+                </div>
               </div>
             </div>
           </div>
@@ -201,8 +204,8 @@ export default {
   methods: {
     getCartCount() {
       this.axios.get('/carts/products/sum', {
-      }).then((res=0) => {
-        this.$store.dispatch('saveCartCount',res)
+      }).then((res = 0) => {
+        this.$store.dispatch('saveCartCount', res)
       })
     },
     getProduct() {
@@ -221,7 +224,7 @@ export default {
         productId: id,
         selected: true
       }).then((res) => {
-         this.showModal = true
+        this.showModal = true
         this.$store.dispatch('saveCartCount', res.cartTotalQuantity)
       }).catch(() => {
         this.showModal = true
@@ -454,9 +457,23 @@ export default {
                 margin-bottom: 13px;
               }
 
-              h5 {
-                color: #F20A0A;
+              .price-icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                h5 {
+                  color: #F20A0A;
+                }
+
+               img{
+                width: 22px;
+                 height: 16px;
+                 background-color:#FF6600;
+                 margin-left: 4px;
+                }
               }
+
+
             }
           }
 
