@@ -4,7 +4,7 @@
       <div class="swiper-box">
         <div class="wrap-nav">
           <ul class="wrap-menu">
-            <li class="warp-item"> 
+            <li class="warp-item">
               <a href="##">手机 电话卡</a>
               <div class="children">
                 <ul v-for="(item, i) in menuList" :key="i">
@@ -67,7 +67,7 @@
         <span>手机</span>
         <div class="product-content">
           <div class="left-banner">
-            <a :href="'/#/product/'"><img v-lazy="'/imgs/mix-alpha.jpg'" alt=""></a>
+            <a :href="'/#/product/30'"><img v-lazy="'/imgs/mix-alpha.jpg'" alt=""></a>
           </div>
           <div class="phone-list">
             <div class="item" v-for="(item, index) in phoneList" :key="index">
@@ -78,7 +78,7 @@
                 <p>{{ innerItem.subtitle }}</p>
                 <div class="price-icon">
                   <h5>{{ innerItem.price }}元</h5>
-                  <img src="../../public/imgs/icon-cart-checked.png" @click="addCart(innerItem.id)" class="icon-cart">
+                  <img src="../../public/imgs/gouwuchetianse.png" @click="addCart(innerItem.id)" class="icon-cart">
                 </div>
               </div>
             </div>
@@ -461,15 +461,15 @@ export default {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
                 h5 {
                   color: #F20A0A;
                 }
 
-               img{
-                width: 22px;
-                 height: 16px;
-                 background-color:#FF6600;
-                 margin-left: 4px;
+                img {
+                  width: 16px;
+                  height: 16px;
+                  margin-left: 4px;
                 }
               }
 

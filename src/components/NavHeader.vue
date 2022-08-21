@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="nav-topbar">
-      <div class="container">
+      <div class="header-container">
         <div class="topbar-menu">
           <a href="javascript:;">小米商城</a>
           <a href="javascript:;">MUI</a>
@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="nav-header">
-      <div class="container">
+      <div class="nav-container">
         <div class="header-logo">
           <a href="/#/index"></a>
         </div>
@@ -184,7 +184,7 @@ export default {
     background-color: #333333;
     color: #B0B0B0;
 
-    .container {
+    .header-container {
       @include flex();
 
       a {
@@ -209,7 +209,7 @@ export default {
   }
 
   .nav-header {
-    .container {
+    .nav-container {
       position: relative;
       height: 112px;
       @include flex();

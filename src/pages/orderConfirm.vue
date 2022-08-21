@@ -515,7 +515,7 @@ export default {
                 border: 1px solid #E5E5E5;
 
                 &+.input {
-                    margin-left: 14px;
+                    margin-top: 14px;
                 }
             }
 
